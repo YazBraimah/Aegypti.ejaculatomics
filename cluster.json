@@ -1,0 +1,65 @@
+{
+    "__default__": {
+        "q"         : "regular.q@cbsubscb01,regular.q@cbsubscb02,regular.q@cbsubscb03,regular.q@cbsubscb04,regular.q@cbsubscb05,regular.q@cbsubscb06,regular.q@cbsubscb07,regular.q@cbsubscb08,regular.q@cbsubscb09,regular.q@cbsubscb10,regular.q@cbsubscb11,regular.q@cbsubscb12",
+        "output"    : "/home/ya76/GitHub_Repositories/Aegypti.Male.reproductive.tissue.L5/cluster_logs/",
+        "jname"     : "default",
+        "cores"     : 4,
+        "bl"        : 4,
+        "memory"    : "8G",
+        "time"      : "03:00:00"
+    },
+    "fastqcSE": {
+        "q"         : "regular.q@cbsubscb01,regular.q@cbsubscb02,regular.q@cbsubscb03,regular.q@cbsubscb04,regular.q@cbsubscb05,regular.q@cbsubscb06,regular.q@cbsubscb07,regular.q@cbsubscb08,regular.q@cbsubscb09,regular.q@cbsubscb10,regular.q@cbsubscb11,regular.q@cbsubscb12",
+        "output"    : "/home/ya76/GitHub_Repositories/Aegypti.Male.reproductive.tissue.L5/cluster_logs/",
+        "jname"     : "fastqc_se",
+        "cores"     : 4,
+        "bl"        : 4,
+        "memory"    : "8G",
+        "time"      : "01:00:00"
+    },
+    "fastqcPE": {
+        "q"         : "regular.q@cbsubscb01,regular.q@cbsubscb02,regular.q@cbsubscb03,regular.q@cbsubscb04,regular.q@cbsubscb05,regular.q@cbsubscb06,regular.q@cbsubscb07,regular.q@cbsubscb08,regular.q@cbsubscb09,regular.q@cbsubscb10,regular.q@cbsubscb11,regular.q@cbsubscb12",
+        "output"    : "/home/ya76/GitHub_Repositories/Aegypti.Male.reproductive.tissue.L5/cluster_logs/",
+        "jname"     : "fastqc_pe",
+        "cores"     : 4,
+        "bl"        : 4,
+        "memory"    : "8G",
+        "time"      : "01:00:00"
+    },
+    "hisat2_se_mapping": {
+       "q"          : "regular.q@cbsubscb01,regular.q@cbsubscb02,regular.q@cbsubscb03,regular.q@cbsubscb04,regular.q@cbsubscb05,regular.q@cbsubscb06,regular.q@cbsubscb07,regular.q@cbsubscb08,regular.q@cbsubscb09,regular.q@cbsubscb10,regular.q@cbsubscb11,regular.q@cbsubscb12",
+        "output"    : "/home/ya76/GitHub_Repositories/Aegypti.Male.reproductive.tissue.L5/cluster_logs/",
+        "jname"     : "hs2.mapSE",
+        "cores"     : 8,
+        "bl"        : 8,
+        "memory"    : "32G",
+        "time"      : "03:00:00"
+    },
+    "hisat2_pe_mapping": {
+       "q"          : "regular.q@cbsubscb01,regular.q@cbsubscb02,regular.q@cbsubscb03,regular.q@cbsubscb04,regular.q@cbsubscb05,regular.q@cbsubscb06,regular.q@cbsubscb07,regular.q@cbsubscb08,regular.q@cbsubscb09,regular.q@cbsubscb10,regular.q@cbsubscb11,regular.q@cbsubscb12",
+        "output"    : "/home/ya76/GitHub_Repositories/Aegypti.Male.reproductive.tissue.L5/cluster_logs/",
+        "jname"     : "hs2.mapPE",
+        "cores"     : 8,
+        "bl"        : 8,
+        "memory"    : "32G",
+        "time"      : "03:00:00"
+    },
+    "stringtie_assembly": {
+       "q"          : "regular.q@cbsubscb01,regular.q@cbsubscb02,regular.q@cbsubscb03,regular.q@cbsubscb04,regular.q@cbsubscb05,regular.q@cbsubscb06,regular.q@cbsubscb07,regular.q@cbsubscb08,regular.q@cbsubscb09,regular.q@cbsubscb10,regular.q@cbsubscb11,regular.q@cbsubscb12",
+        "output"    : "/home/ya76/GitHub_Repositories/Aegypti.Male.reproductive.tissue.L5/cluster_logs/",
+        "jname"     : "st.asmbl",
+        "cores"     : 8,
+        "bl"        : 8,
+        "memory"    : "32G",
+        "time"      : "02:00:00"
+    },
+    "abundances": {
+       "q"          : "regular.q@cbsubscb01,regular.q@cbsubscb02,regular.q@cbsubscb03,regular.q@cbsubscb04,regular.q@cbsubscb05,regular.q@cbsubscb06,regular.q@cbsubscb07,regular.q@cbsubscb08,regular.q@cbsubscb09,regular.q@cbsubscb10,regular.q@cbsubscb11,regular.q@cbsubscb12",
+        "output"    : "/home/ya76/GitHub_Repositories/Aegypti.Male.reproductive.tissue.L5/cluster_logs/",
+        "jname"     : "st.abndns",
+        "cores"     : 4,
+        "bl"        : 4,
+        "memory"    : "8G",
+        "time"      : "02:00:00"
+    }
+}

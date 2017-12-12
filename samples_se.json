@@ -1,0 +1,122 @@
+{
+    "Fe_RT_0hpm_1": {
+        "R1": [
+            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Comprehensive.RNAseq/reads/Fe_RT_0hpm_1.R1.fq.gz"
+        ]
+    },
+    "Fe_RT_0hpm_2": {
+        "R1": [
+            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Comprehensive.RNAseq/reads/Fe_RT_0hpm_2.R1.fq.gz"
+        ]
+    },
+    "Fe_RT_24hpm_1": {
+        "R1": [
+            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Comprehensive.RNAseq/reads/Fe_RT_24hpm_1.R1.fq.gz"
+        ]
+    },
+    "Fe_RT_24hpm_2": {
+        "R1": [
+            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Comprehensive.RNAseq/reads/Fe_RT_24hpm_2.R1.fq.gz"
+        ]
+    },
+    "Fe_RT_6hpm_1": {
+        "R1": [
+            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Comprehensive.RNAseq/reads/Fe_RT_6hpm_1.R1.fq.gz"
+        ]
+    },
+    "Fe_RT_6hpm_2": {
+        "R1": [
+            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Comprehensive.RNAseq/reads/Fe_RT_6hpm_2.R1.fq.gz"
+        ]
+    },
+    "Fe_RT_virgin_1": {
+        "R1": [
+            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Comprehensive.RNAseq/reads/Fe_RT_virgin_1.R1.fq.gz"
+        ]
+    },
+    "Ma_CR_1": {
+        "R1": [
+            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Comprehensive.RNAseq/reads/Ma_CR_1.R1.fq.gz"
+        ]
+    },
+    "Ma_ESp_1": {
+        "R1": [
+            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Comprehensive.RNAseq/reads/Ma_ESp_1.R1.fq.gz"
+        ]
+    },
+    "Ma_LSp_1": {
+        "R1": [
+            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Comprehensive.RNAseq/reads/Ma_LSp_1.R1.fq.gz"
+        ]
+    },
+    "Ma_TS_1": {
+        "R1": [
+            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Comprehensive.RNAseq/reads/Ma_TS_1.R1.fq.gz"
+        ]
+    },
+    "Ma_gCR_1": {
+        "R1": [
+            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Comprehensive.RNAseq/reads/Ma_gCR_1.R1.fq.gz"
+        ]
+    },
+    "depMAG_1": {
+        "R1": [
+            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Ethan.sperm.proteome/RNAseq.Data/reads/Trimmed.reads/depMAG_1.R1.fq.gz"
+        ]
+    },
+    "depMAG_2": {
+        "R1": [
+            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Ethan.sperm.proteome/RNAseq.Data/reads/Trimmed.reads/depMAG_2.R1.fq.gz"
+        ]
+    },
+    "depMAG_3": {
+        "R1": [
+            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Ethan.sperm.proteome/RNAseq.Data/reads/Trimmed.reads/depMAG_3.R1.fq.gz"
+        ]
+    },
+    "depMAG_4": {
+        "R1": [
+            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Ethan.sperm.proteome/RNAseq.Data/reads/Trimmed.reads/depMAG_4.R1.fq.gz"
+        ]
+    },
+    "testes_1": {
+        "R1": [
+            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Ethan.sperm.proteome/RNAseq.Data/reads/Trimmed.reads/testes_1.R1.fq.gz"
+        ]
+    },
+    "testes_2": {
+        "R1": [
+            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Ethan.sperm.proteome/RNAseq.Data/reads/Trimmed.reads/testes_2.R1.fq.gz"
+        ]
+    },
+    "testes_3": {
+        "R1": [
+            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Ethan.sperm.proteome/RNAseq.Data/reads/Trimmed.reads/testes_3.R1.fq.gz"
+        ]
+    },
+    "testes_4": {
+        "R1": [
+            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Ethan.sperm.proteome/RNAseq.Data/reads/Trimmed.reads/testes_4.R1.fq.gz"
+        ]
+    },
+    "virMAG_1": {
+        "R1": [
+            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Ethan.sperm.proteome/RNAseq.Data/reads/Trimmed.reads/virMAG_1.R1.fq.gz"
+        ]
+    },
+    "virMAG_2": {
+        "R1": [
+            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Ethan.sperm.proteome/RNAseq.Data/reads/Trimmed.reads/virMAG_2.R1.fq.gz"
+        ]
+    },
+    "virMAG_3": {
+        "R1": [
+            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Ethan.sperm.proteome/RNAseq.Data/reads/Trimmed.reads/virMAG_3.R1.fq.gz"
+        ]
+    },
+    "virMAG_4": {
+        "R1": [
+            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Ethan.sperm.proteome/RNAseq.Data/reads/Trimmed.reads/virMAG_4.R1.fq.gz"
+        ]
+    }
+}

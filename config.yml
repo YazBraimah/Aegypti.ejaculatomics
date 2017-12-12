@@ -1,0 +1,15 @@
+# Path to FASTA file and it's bowtie2 index.
+DNA: '/home/ya76/Aedes_aegypti_data/AaeL5/VectorBase/genome/AaegL5_VB.fa'
+INDEX: '/home/ya76/Aedes_aegypti_data/AaeL5/VectorBase/genome/hisat2'
+
+# Path to an uncompressed GTF file with all gene annotations.
+GTF: '/home/ya76/Aedes_aegypti_data/AaeL5/VectorBase/annotation/AaegL5_VB.gtf'
+
+# Path to a output folder where files will be written.
+OUT_DIR: '/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Ethan.sperm.proteome/Tuxedo2_L5_VB_snakemake_output'
+HOME_DIR: '/home/ya76/GitHub_Repositories/Aegypti.Male.reproductive.tissue.L5'
+WORK_DIR: '/workdir'
+
+# Path to a JSON file with samples and their corresponding FASTQ files.
+SE_SAMPLES_JSON: '/home/ya76/GitHub_Repositories/Aegypti.Male.reproductive.tissue.L5/samples_se.json'
+PE_SAMPLES_JSON: '/home/ya76/GitHub_Repositories/Aegypti.Male.reproductive.tissue.L5/samples_pe.json'
