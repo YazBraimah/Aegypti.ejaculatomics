@@ -1,0 +1,16 @@
+Ma_CR_2.R1.fq.gz
+Ma_CR_2.R2.fq.gz
+Ma_TS_2.R1.fq.gz
+Ma_TS_2.R2.fq.gz
+Fe_RT_0hpm_1.R1.fq.gz
+Fe_RT_0hpm_2.R1.fq.gz
+Fe_RT_24hpm_1.R1.fq.gz
+Fe_RT_24hpm_2.R1.fq.gz
+Fe_RT_6hpm_1.R1.fq.gz
+Fe_RT_6hpm_2.R1.fq.gz
+Fe_RT_virgin_1.R1.fq.gz
+Ma_CR_1.R1.fq.gz
+Ma_ESp_1.R1.fq.gz
+Ma_LSp_1.R1.fq.gz
+Ma_TS_1.R1.fq.gz
+Ma_gCR_1.R1.fq.gz

@@ -1,0 +1,11 @@
+cbsubscb07.tc.cornell.edu
+11
+
+149818611
+User ya76 attempting to mount cbsufsrv5:/data1  on cbsubscb07
+mounting nfs4 cbsufsrv5:/data1 on /fs/cbsufsrv5/data1 (cbsubscb07)
+mount.nfs4: /fs/cbsufsrv5/data1 is busy or already mounted
+Read 15120717 spots for SRR923701
+Written 15120717 spots for SRR923701
+Mon Dec 18 13:47:48 EST 2017
+Runtime: 0.125 hours (450s)

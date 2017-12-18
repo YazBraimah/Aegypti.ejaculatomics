@@ -1,0 +1,16 @@
+mv SRR923701_pass.fastq.gz Ma_TS_1.R1.fq.gz
+mv SRR3554589_pass.fastq.gz Ma_LSp_1.R1.fq.gz
+mv SRR3554588_pass.fastq.gz Ma_ESp_1.R1.fq.gz
+mv SRR923703_pass.fastq.gz Ma_CR_1.R1.fq.gz
+mv SRR3213869_pass.fastq.gz Fe_RT_virgin_1.R1.fq.gz
+mv SRR3213866_pass.fastq.gz Fe_RT_6hpm_2.R1.fq.gz
+mv SRR3213865_pass.fastq.gz Fe_RT_6hpm_1.R1.fq.gz
+mv SRR3213868_pass.fastq.gz Fe_RT_24hpm_2.R1.fq.gz
+mv SRR3213867_pass.fastq.gz Fe_RT_24hpm_1.R1.fq.gz
+mv SRR3213864_pass.fastq.gz Fe_RT_0hpm_2.R1.fq.gz
+mv SRR3213863_pass.fastq.gz Fe_RT_0hpm_1.R1.fq.gz
+mv SRR924021_pass_1.fastq.gz Ma_TS_2.R1.fq.gz
+mv SRR924022_pass_1.fastq.gz Ma_CR_2.R1.fq.gz
+mv SRR924021_pass_2.fastq.gz Ma_TS_2.R2.fq.gz
+mv SRR924022_pass_2.fastq.gz Ma_CR_2.R2.fq.gz
+mv SRR3554591_pass.fastq.gz Ma_gCR_1.R1.fq.gz
