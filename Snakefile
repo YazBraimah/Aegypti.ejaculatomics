@@ -4,6 +4,7 @@ Author: Y. Ahmed-Braimah
 """
 
 import json
+# import psutil
 from os.path import join, basename, dirname
 from os import getcwd
 from subprocess import check_output
@@ -93,7 +94,7 @@ rule fastqcSE:
     run:
         if not os.path.exists(join(OUT_DIR, 'fastQC')):
             os.makedirs(join(OUT_DIR, 'fastQC'))
-        shell('/programs/bin/labutils/mount_server cbsufsrv5 /data1')
+        # shell('/programs/bin/labutils/mount_server cbsufsrv5 /data1')
         shell('mkdir -p ' + join(WORK_DIR, USER, JOB_ID) +
                 ' && cp {input.r1} ' + join(WORK_DIR, USER, JOB_ID) +
                 ' && cd ' + join(WORK_DIR, USER, JOB_ID) + 
@@ -122,7 +123,7 @@ rule fastqcPE:
     run:
         if not os.path.exists(join(OUT_DIR, 'fastQC')):
             os.makedirs(join(OUT_DIR, 'fastQC'))
-        shell('/programs/bin/labutils/mount_server cbsufsrv5 /data1')
+        # shell('/programs/bin/labutils/mount_server cbsufsrv5 /data1')
         shell('mkdir -p ' + join(WORK_DIR, USER, JOB_ID) +
                 ' && cp {input.r1} {input.r2} ' + join(WORK_DIR, USER, JOB_ID) +
                 ' && cd ' + join(WORK_DIR, USER, JOB_ID) + 
@@ -147,7 +148,7 @@ rule hisat2_se_mapping:
     message: 
         """--- Mapping SE reads for sample {wildcards.sample} to genome with HISAT-2 """
     run:
-        shell('/programs/bin/labutils/mount_server cbsufsrv5 /data1')
+        # shell('/programs/bin/labutils/mount_server cbsufsrv5 /data1')
         shell('mkdir -p ' + join(WORK_DIR, USER, JOB_ID) +
                 ' && cp ' + join(dirname(DNA), rstrip(os.path.basename(DNA), '.fa') + '*') + ' ' + join(WORK_DIR, USER, JOB_ID) +
                 ' && cp ' + join(INDEX, '*') + ' ' + join(WORK_DIR, USER, JOB_ID) +
@@ -179,7 +180,7 @@ rule hisat2_pe_mapping:
     message: 
         """--- Mapping PE reads for sample {wildcards.sample} to genome with HISAT-2 """
     run:
-        shell('/programs/bin/labutils/mount_server cbsufsrv5 /data1')
+        # shell('/programs/bin/labutils/mount_server cbsufsrv5 /data1')
         shell('mkdir -p ' + join(WORK_DIR, USER, JOB_ID) +
                 ' && cp ' + join(dirname(DNA), rstrip(os.path.basename(DNA), '.fa') + '*') + ' ' + join(WORK_DIR, USER, JOB_ID) +
                 ' && cp ' + join(INDEX, '*') + ' ' + join(WORK_DIR, USER, JOB_ID) +
@@ -188,7 +189,7 @@ rule hisat2_pe_mapping:
                 ' && (hisat2'
                 ' -p 16'
                 ' --dta'
-                ' -x ' + join(rstrip(os.path.basename(DNA), '.fa') + '_tran') +
+                ' -x ' + rstrip(os.path.basename(DNA), '.fa') + '_tran' +
                 ' -1 {wildcards.sample}.R1.fq.gz'
                 ' -2 {wildcards.sample}.R2.fq.gz)'
                 ' 2>{log}'

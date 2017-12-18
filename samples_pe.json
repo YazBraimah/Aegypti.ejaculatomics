@@ -1,18 +1,18 @@
 {
     "Ma_CR_2": {
         "R1": [
-            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Comprehensive.RNAseq/reads/Ma_CR_2.R1.fq.gz"
+            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Comprehensive.RNAseq/reads/SRA/Ma_CR_2.R1.fq.gz"
         ],
         "R2": [
-            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Comprehensive.RNAseq/reads/Ma_CR_2.R2.fq.gz"
+            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Comprehensive.RNAseq/reads/SRA/Ma_CR_2.R2.fq.gz"
         ]
     },
     "Ma_TS_2": {
         "R1": [
-            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Comprehensive.RNAseq/reads/Ma_TS_2.R1.fq.gz"
+            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Comprehensive.RNAseq/reads/SRA/Ma_TS_2.R1.fq.gz"
         ],
         "R2": [
-            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Comprehensive.RNAseq/reads/Ma_TS_2.R2.fq.gz"
+            "/fs/cbsufsrv5/data1/ya76/Aedes.Aegypti/Comprehensive.RNAseq/reads/SRA/Ma_TS_2.R2.fq.gz"
         ]
     }
 }
