@@ -853,22 +853,14 @@ plotGeneTPM<-function(object, gene, logMode=FALSE){
 #######
 plotBoxTPM<-function(object, gene){
     if (grepl("MSTRG", gene)){
-        geneName<-subset(ref_to_gene_to_annots, gene_id == gene)$gene_name
-    } else {geneName<-subset(ref_to_gene_to_annots, gene_name == gene)$gene_id}
-    l5.annot <- subset(ref_to_gene_to_annots, gene_id == gene | gene_name == gene)$description
-    sp.annot <- subset(trinotate, gene_name == gene | gene_name == geneName)$SwissProt_blastX
-#     transID <- subset(ref_to_gene_to_annots, gene_id == gene)$transcript_id[1]
-#     mel.orth <- subset(Dmel.orths, transcript_id == transID)$Dmel_gene_symbol
-    l3.blastx <- unique(subset(trinotate, gene_name == gene | gene_name == geneName)$AaegL3.4.blastX)
-    l3.blastp <- unique(subset(trinotate, gene_name == gene | gene_name == geneName)$AaegL3.4.blastP)
-    l3.annot <- subset(AaegL3_annotation, gene_id == l3.blastx)$description
-    coords.tmp<-subset(gene.features, gene_id == gene | gene_name == gene)
-    coords<-paste(coords.tmp$chromosome, ":", coords.tmp$min,"-",coords.tmp$max, sep = "")
+        geneName<-subset(geneFeatures, mstrg_ID == gene)$gene_ID
+    } else {geneName<-subset(geneFeatures, gene_ID == gene)$mstrg_id}
+    l5.annot <- subset(geneFeatures, mstrg_ID == gene | gene_ID == gene)$GenBank_description
     p <- ggplot(subset(object, gene_id == gene), aes(sample, TPM, colour = Tissue)) + 
         facet_grid(.~Source, scales = "free") +
         geom_boxplot(width = 0.2, fill = "black", position = "dodge", outlier.size = NULL) + 
         geom_jitter(width = 0.3) + theme_bw() +
-        labs(title = paste(gene," (", geneName,"). ", coords, "\nAaegL5 description: ", l5.annot, "\nAaegL3 description: ", l3.annot,"\nSwissprot description: ", sp.annot,  "\nVectorBase ID: ",l3.blastp, " (BlastP), ", l3.blastx, " (BlastX)",sep = "")) + 
+        labs(title = paste(gene," (", geneName,"). ", "\nAaegL5 description: ", l5.annot ,sep = "")) + 
         theme(axis.text.x=element_text(angle = 45, hjust = 1)) 
     p <- p + ylab("TPM")
 return(p)
