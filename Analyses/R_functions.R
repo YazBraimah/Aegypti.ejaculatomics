@@ -158,6 +158,113 @@ tpm <- function(counts, lengths) {
 ##------------------------------------------------------------------------##
 ##------------------------------------------------------------------------##
 
+## function for plotting comprehensive gene expression data from the aegypti atlas
+
+compGeneBarplot<-function(gene, logMode=FALSE){
+    
+    ## Now the expression plots
+    gene_sub_tpm.c = subset(compRNAseq, ref_gene_id == gene)
+    
+    # gene_sub_tpm.c = summarySE(gene_sub_tpm, measurevar = "TPM", groupvars = c("gene_id", "ref_gene_id", "description", "gene_name", "Sample_Name", "alt_name", "dev_stage", "sex", "tissue", "strain", "sprot_Top_BLASTX_hit_description", "Source", "Source_description", "coordinates", "sprot_Top_BLASTX_hit_description", "description", "gene_ontology_pfam"))
+    
+    gene_sub_tpm.c$alt_name = factor(gene_sub_tpm.c$alt_name, levels = c("0-2hrs", "2-4hrs", "4-8hrs", "8-12hrs", "12-16hrs", "16-20hrs", "20-24hr", "24-28hrs", "28-32hrs", "32-36hrs", "36-40hr", "40-44hrs", "44-48hrs", "48-52hrs", "52-56hr", "56-60hr", "60-64hrs", "64-68hrs", "68-72hrs", "72-76hrs", "1st instar", "2nd instar", "3rd instar", "4th instar", "early", "middle", "late", "virgin", "0hpm", "6hpm", "24hpm", "not BF", "12hr post-BF", "24hr post-BF", "36hr post-BF", "48hr post-BF", "48hrs post-BF", "60hr post-BF", "72hr post-BF", "96hrs post-BF", "larvae (m & f)", "adult female", "female", "male", "males and females", "ovaries", "testes", "testes and AG", "mated", "Acc_glnds", "carcass"))
+    
+    gene_sub_tpm.c$tissue = factor(gene_sub_tpm.c$tissue, levels = c("embryos", "larvae", "pupae", "proboscises", "malpighian tubule", "SGs", "Pr","MPs", "fat body", "antennae", "rostrums", "brains", "carcass", "GD male", "forelegs", "midlegs", "hindlegs", "gonads", "ovaries", "AG", "male accessory gland","abdominal tips", "testes", "lower female reproductive tract", "sperm"))
+    
+    Akbari_adults = ggplot(subset(gene_sub_tpm.c, Source == "Cal Tech 2013" & dev_stage == "adult"), aes(alt_name, TPM, fill = sex)) +
+        geom_bar(position=position_dodge(), stat="identity") +
+        geom_errorbar(aes(ymin=TPM-se, ymax=TPM+se), width=.2, position=position_dodge(.9)) +
+        facet_grid(.~tissue, scales = "free", space = "free_x") +
+        theme_bw() +
+        theme(axis.text.x=element_text(angle=45, hjust = 1), axis.title.x = element_blank()) +
+        scale_fill_manual(values = wes_palette("Royal1")) +
+        labs(title = paste(subset(gene_sub_tpm.c, Source == "Cal Tech 2013")$Source_description, ": adult tissues", sep = ""))
+    
+    Akbari_embryos_larvae_pupae = ggplot(subset(gene_sub_tpm.c, Source == "Cal Tech 2013" & tissue == "embryos"| Source == "Cal Tech 2013" & tissue == "larvae" | Source == "Cal Tech 2013" & tissue == "pupae"), aes(alt_name, TPM, fill = tissue)) +
+        geom_bar(position=position_dodge(), stat="identity") +
+        geom_errorbar(aes(ymin=TPM-se, ymax=TPM+se), width=.2, position=position_dodge(.9)) +
+        facet_grid(.~tissue, scales = "free", space = "free_x") +
+        theme_bw() +
+        theme(axis.text.x=element_text(angle=45, hjust = 1), legend.position="none", axis.title.x = element_blank()) +
+        scale_fill_manual(values = wes_palette("Royal2")) +
+        labs(title = paste(gene," (",gene_sub_tpm.c$gene_name,")\n",
+                           "Genomic location: ", gene_sub_tpm.c$coordinates, "\n",
+                           "Description:", "\n-",
+                           gene_sub_tpm.c$sprot_Top_BLASTX_hit_description, " (SwissProt) \n-",
+                           str_wrap(gene_sub_tpm.c$description, width = 110)," (AaegL5) \n",
+                           "Gene Ontology:", str_wrap(gene_sub_tpm.c$gene_ontology_pfam, width = 110), "\n\n",
+                           subset(gene_sub_tpm.c, Source == "Cal Tech 2013")$Source_description, ": embryos, larvae, and pupae", 
+                           sep = ""))
+    
+    Matthews = ggplot(subset(gene_sub_tpm.c, Source == "Rockefeller 2016"), aes(alt_name, TPM, fill = sex)) +
+        geom_bar(position=position_dodge(), stat="identity") +
+        geom_errorbar(aes(ymin=TPM-se, ymax=TPM+se), width=.2, position=position_dodge(.9)) +
+        facet_grid(.~tissue, scales = "free", space = "free_x") +
+        theme_bw() +
+        theme(axis.text.x=element_text(angle=45, hjust = 1), axis.title.x = element_blank()) +
+        scale_fill_manual(values = wes_palette("Royal1")) +
+        labs(title = subset(gene_sub_tpm.c, Source == "Rockefeller 2016")$Source_description)
+    
+    Rockefeller = ggplot(subset(gene_sub_tpm.c, Source == "Rockefeller 2017"), aes(alt_name, TPM, fill = sex)) +
+        geom_bar(position=position_dodge(), stat="identity") +
+        geom_errorbar(aes(ymin=TPM-se, ymax=TPM+se), width=.2, position=position_dodge(.9)) +
+        facet_grid(.~tissue, scales = "free", space = "free_x") +
+        theme_bw() +
+        theme(axis.text.x=element_text(angle=45, hjust = 1), axis.title.x = element_blank()) +
+        scale_fill_manual(values = wes_palette("Royal1")) +
+        labs(title = subset(gene_sub_tpm.c, Source == "Rockefeller 2017")$Source_description)
+    
+    Alfonso_Parra = ggplot(subset(gene_sub_tpm.c, Source == "Cornell 2016"), aes(alt_name, TPM)) +
+        geom_bar(position=position_dodge(), stat="identity", fill = "#0298c5") +
+        geom_errorbar(aes(ymin=TPM-se, ymax=TPM+se), width=.2, position=position_dodge(.9)) +
+        #         facet_grid(.~tissue, scales = "free") +
+        theme_bw() +
+        #         scale_fill_manual(values = wes_palette("Royal1")) +
+        theme(axis.text.x=element_text(angle=45, hjust = 1), axis.title.x = element_blank()) +
+        labs(title = subset(gene_sub_tpm.c, Source == "Cornell 2016")$Source_description)
+    
+    Degner = ggplot(subset(gene_sub_tpm.c, Source == "Cornell 2018"), aes(alt_name, TPM)) +
+        geom_bar(position=position_dodge(), stat="identity", fill = "#008831") +
+        geom_errorbar(aes(ymin=TPM-se, ymax=TPM+se), width=.2, position=position_dodge(.9)) +
+        facet_grid(.~tissue, scales = "free", space = "free_x") +
+        theme_bw() +
+        theme(axis.text.x=element_text(angle=45, hjust = 1), axis.title.x = element_blank()) +
+        labs(title = subset(gene_sub_tpm.c, Source == "Cornell 2018")$Source_description)
+    
+    Sutton = ggplot(subset(gene_sub_tpm.c, Source == "Oxford 2015"), aes(alt_name, TPM)) +
+        geom_bar(position=position_dodge(), stat="identity", fill = "#cd0027") +
+        geom_errorbar(aes(ymin=TPM-se, ymax=TPM+se), width=.2, position=position_dodge(.9)) +
+        facet_grid(.~tissue, scales = "free", space = "free_x") +
+        theme_bw() +
+        theme(axis.text.x=element_text(angle=45, hjust = 1), axis.title.x = element_blank()) +
+        labs(title = "Sperm")
+    
+    NMSU = ggplot(subset(gene_sub_tpm.c, Source == "NMSU" | Source == "NIAID"), aes(alt_name, TPM)) +
+        geom_bar(position=position_dodge(), stat="identity", fill = "#d36700") +
+        geom_errorbar(aes(ymin=TPM-se, ymax=TPM+se), width=.2, position=position_dodge(.9)) +
+        facet_grid(.~tissue, scales = "free", space = "free_x") +
+        theme_bw() +
+        theme(axis.text.x=element_text(angle=45, hjust = 1), axis.title.x = element_blank()) +
+        labs(title = "FB, MT, and Sal. Glnds")
+    
+    vtech = ggplot(subset(gene_sub_tpm.c, Source == "Virginia tech"), aes(alt_name, TPM)) +
+        geom_bar(position=position_dodge(), stat="identity", fill = "#9187c6") +
+        geom_errorbar(aes(ymin=TPM-se, ymax=TPM+se), width=.2, position=position_dodge(.9)) +
+        theme_bw() +
+        theme(axis.text.x=element_text(angle=45, hjust = 1), axis.title.x = element_blank()) +
+        labs(title = "Early embryos")
+    
+    plots <- align_plots(Akbari_embryos_larvae_pupae, Akbari_adults, Matthews, Rockefeller, Alfonso_Parra, align = 'v', axis = 'l')
+    # first_row <- plot_grid(plots[[1]])
+    second_row <- plot_grid(plots[[1]], align = 'h')
+    third_row <- plot_grid(plots[[2]], NMSU, align = 'h', rel_widths = c(2.5, 1))
+    fourth_row <- plot_grid(plots[[3]])
+    fifth_row <- plot_grid(plots[[4]])
+    sixth_row <- plot_grid(plots[[5]], Degner, Sutton, vtech, align = 'h', rel_widths = c(1, 1, 1, 1), nrow = 1)
+    p <- plot_grid(second_row, third_row, fourth_row, fifth_row, sixth_row, ncol = 1, rel_heights = c(3.75, 2.5, 2.5, 2, 2))
+    return(p)
+}
+
 #### HEATMAP.3
 
 ## pulled from here, and then tweaked slightly: http://www.biostars.org/p/18211/
