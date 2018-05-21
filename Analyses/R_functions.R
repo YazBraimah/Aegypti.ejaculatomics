@@ -169,7 +169,7 @@ compGeneBarplot<-function(gene, logMode=FALSE){
     
     gene_sub_tpm.c$alt_name = factor(gene_sub_tpm.c$alt_name, levels = c("0-2hrs", "2-4hrs", "4-8hrs", "8-12hrs", "12-16hrs", "16-20hrs", "20-24hr", "24-28hrs", "28-32hrs", "32-36hrs", "36-40hr", "40-44hrs", "44-48hrs", "48-52hrs", "52-56hr", "56-60hr", "60-64hrs", "64-68hrs", "68-72hrs", "72-76hrs", "1st instar", "2nd instar", "3rd instar", "4th instar", "early", "middle", "late", "virgin", "0hpm", "6hpm", "24hpm", "not BF", "12hr post-BF", "24hr post-BF", "36hr post-BF", "48hr post-BF", "48hrs post-BF", "60hr post-BF", "72hr post-BF", "96hrs post-BF", "larvae (m & f)", "adult female", "female", "male", "males and females", "ovaries", "testes", "testes and AG", "mated", "Acc_glnds", "carcass"))
     
-    gene_sub_tpm.c$tissue = factor(gene_sub_tpm.c$tissue, levels = c("embryos", "larvae", "pupae", "proboscises", "malpighian tubule", "SGs", "Pr","MPs", "fat body", "antennae", "rostrums", "brains", "carcass", "GD male", "forelegs", "midlegs", "hindlegs", "gonads", "ovaries", "AG", "male accessory gland","abdominal tips", "testes", "lower female reproductive tract", "sperm"))
+    gene_sub_tpm.c$tissue = factor(gene_sub_tpm.c$tissue, levels = c("embryos", "larvae", "pupae", "proboscises", "malpighian tubule", "SGs", "Pr","MPs", "fat body", "antennae", "rostrums", "brains", "carcass", "GD male", "forelegs", "midlegs", "hindlegs", "gonads", "ovaries", "AG", "male accessory gland", "accessory glands", "abdominal tips", "testes", "lower female reproductive tract", "sperm"))
     
     Akbari_adults = ggplot(subset(gene_sub_tpm.c, Source == "Cal Tech 2013" & dev_stage == "adult"), aes(alt_name, TPM, fill = sex)) +
         geom_bar(position=position_dodge(), stat="identity") +
